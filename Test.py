@@ -5,10 +5,13 @@
 # // 暂时不用
 # python3.10测试
 
-a = int(input('请输入: '))
+def cumsum(nums: list):
+  result = []
+  for i in range(len(nums)):
+    value = sum(nums[:i+1])
+    result.append(value)
+  return result
 
-match a:
-  case 12:
-    print(f'你是孩子！')
-  case _:
-    print('你不是人！')
+
+lst = [1, 3, 5, 6]
+print(cumsum(lst))
